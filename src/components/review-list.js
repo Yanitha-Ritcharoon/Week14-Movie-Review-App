@@ -3,7 +3,7 @@ import Review from './review';
 
 export default class ReviewList extends React.Component {
     render() {
-        const { name, reviews } = this.props;
+        const { reviews } = this.props;
         
       
     
@@ -11,11 +11,12 @@ export default class ReviewList extends React.Component {
             <div className="card review-list">
                 <h4> Reviews:</h4>
                 <div className="mb-2 text-black">
-                {reviews.map((review, index) =>
+                {reviews.map((reviewInfo, index) =>
                 <Review 
                     key={index} 
-                    name={name}
-                    review={review} />
+                    name={reviewInfo.name}
+                    review={reviewInfo.review} 
+                    rating={reviewInfo.rating} />
                 )}  
                 </div>
             </div>

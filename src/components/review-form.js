@@ -18,9 +18,8 @@ export default class ReviewForm extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.onSubmit(this.state.review);
+        this.props.onSubmit({review: this.state.review, name: this.state.name});
         this.setState({ review: '' });
-        this.props.onSubmit(this.state.name);
         this.setState({ name: '' });
     }
 
